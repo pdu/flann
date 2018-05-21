@@ -171,7 +171,7 @@ Index<Distance>::Index(const std::string& file_name, const std::string& dataset_
     if (index_type == FLANN_INDEX_SAVED) {
         throw FLANNException("Saving/loading of MPI indexes is not currently supported.");
     }
-    flann::mpi::load_from_file(dataset, file_name, dataset_name);
+    flann::load_from_file(dataset, file_name, dataset_name);
     flann_index = new flann::Index<Distance>(dataset, params);
 
     std::vector<int> sizes;
